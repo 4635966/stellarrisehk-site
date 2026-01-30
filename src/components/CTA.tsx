@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Lang } from "../lib/i18n";
 
-export default function CTA({ lang }: { lang: Lang }) {
+export default function CTA({ lang = "en" }: { lang?: Lang }) {
   const zh = lang === "zh";
   return (
     <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-white/6 via-white/4 to-white/6 p-7">
@@ -17,7 +17,10 @@ export default function CTA({ lang }: { lang: Lang }) {
         <Link href={`/${lang}/contact`} className="rounded-xl bg-white text-black px-4 py-2 text-sm font-medium">
           {zh ? "联系我们" : "Contact Us"}
         </Link>
-        <Link href={`/${lang}/compliance`} className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm text-white hover:bg-white/10">
+        <Link
+          href={`/${lang}/compliance`}
+          className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm text-white hover:bg-white/10"
+        >
           {zh ? "查看合规" : "View Compliance"}
         </Link>
       </div>
